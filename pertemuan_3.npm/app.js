@@ -13,13 +13,13 @@ rl.question('What is your name ? ', function (name) {
                 if (validator.isEmail(email)){
                   console.log(`Thank you ${name}, your mobile ${mobile}, and your email ${email}`);
                 } else{
-                  console.log(`email anda salah`);
+                  console.log(`your email is wrong`);
                   
                 }
                 rl.close();
             });
         } else {
-            console.log(`nomor anda salah`);
+            console.log(`your mobile phone is wrong`);
             rl.close();
         }
        
