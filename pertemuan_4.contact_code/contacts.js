@@ -18,20 +18,10 @@ if(!fs.existsSync(dataPath)){
     fs.writeFileSync(dataPath,'[]','utf-8');
 }
 
-// make a function to ask
-const question = (ask) => {
-    return new Promise((resolve,rect) =>{
-        rl.question(ask, (inputVariable)=>{
-            resolve(inputVariable);
-        });
-    });
-};
-module.exports.question = question;
 
-const main = async () =>{
-    const name = await question('What is your name ? ');
-    const mobile = await question('your mobile phone ? ');
-    const email = await question('your email ? ');
+
+
+const saveContact = async (name, mobile, email) =>{
     const contact = {name, mobile, email};
     const file = fs.readFileSync('data/contacts.json', 'utf8');
     const contacts =JSON.parse(file);
@@ -41,4 +31,14 @@ const main = async () =>{
     rl.close();
 }
 
-main();
+// make a function to ask
+const question = (ask) => {
+    return new Promise((resolve,rect) =>{
+        rl.question(ask, (inputVariable)=>{
+            resolve(inputVariable);
+        });
+    });
+};
+
+module.exports.question = question;
+module.exports.saveContact = saveContact;

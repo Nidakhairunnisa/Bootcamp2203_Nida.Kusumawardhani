@@ -2,17 +2,6 @@ const contacts = require('./contacts');
 const fs = require('fs');
 const readline = require('readline');
 
-// membuat folder data apabila tidak ada
-const dirpath= './data';
-if(!fs.existsSync(dirpath)){
-    fs.mkdirSync(dirpath);
-}
-
-//membuat file contats json jika belum ada
-const dataPath = './data/contacts.json';
-if(!fs.existsSync(dataPath)){
-    fs.writeFileSync(dataPath,'[]','utf-8');
-}
 
 const main = async() =>{
     const name = await contacts.question('What is your name ? ');
