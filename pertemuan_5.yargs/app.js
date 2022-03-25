@@ -10,13 +10,13 @@ yargs.command({
             demandOption: true,
             type:'string',
         },
-        mobile:{
-            describe: 'Contact Mobile Phone Number',
-            demandOption: true,
-            type:'string',
-        },
         email:{
             describe: 'Contact Email',
+            demandOption: false,
+            type:'string',
+        },
+        mobile:{
+            describe: 'Contact Mobile Phone Number',
             demandOption: true,
             type:'string',
         },

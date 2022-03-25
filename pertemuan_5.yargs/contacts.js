@@ -18,9 +18,12 @@ const saveContact = (name, email, mobile) =>{
     const contact = {name, email, mobile};
     
     //validator mobile dan email
-    if (!validator.isEmail(email)){
-        console.log(`your email is wrong`);
+    if (email){
+        if (!validator.isEmail(email)){
+            console.log(`your email is wrong`);
+        }
     }
+    
     if (!validator.isMobilePhone(mobile, 'id-ID')){
         console.log('your mobile phone is wrong')
     }
