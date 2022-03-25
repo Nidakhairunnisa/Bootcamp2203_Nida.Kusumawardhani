@@ -31,7 +31,7 @@ yargs.command({
     },
     //run saveContact
     handler(argv){
-        contacts.saveContact(argv.name,argv.mobile,argv.email)
+        contacts.saveContact(argv.name,argv.email, argv.mobile)
     }
 });
 

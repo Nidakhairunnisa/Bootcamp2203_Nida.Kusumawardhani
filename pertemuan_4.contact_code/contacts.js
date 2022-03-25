@@ -18,9 +18,6 @@ if(!fs.existsSync(dataPath)){
     fs.writeFileSync(dataPath,'[]','utf-8');
 }
 
-
-
-
 const saveContact = async (name, mobile, email) =>{
     const contact = {name, mobile, email};
     const file = fs.readFileSync('data/contacts.json', 'utf8');
