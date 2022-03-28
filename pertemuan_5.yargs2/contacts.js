@@ -1,4 +1,4 @@
-const { Console } = require('console');
+// const { Console } = require('console');
 const fs = require('fs');
 const validator = require('validator');
 
@@ -13,9 +13,9 @@ const loadContact = () => {
 }
 
 const listContact =() =>{
-    const contact = loadContact();
+    const contacts = loadContact();
     console.log('Contact List :');
-    contact.forEach((contact, i) =>{
+    contacts.forEach((contact, i) =>{
         console.log(`${i+1}. ${contact.name} - ${contact.mobile}`);
     });
 };
@@ -59,7 +59,7 @@ const deleteContact =(name) =>{
         console.log('${name} name not found');
         return false;
     }
-    fs.writeFileSync('data/contacts.json',JSON.stringify(contact));
+    fs.writeFileSync('data/contacts.json',JSON.stringify(newContact));
     console.log('${name} deleted');
 };
 
