@@ -18,13 +18,15 @@
     <h1>Hello World</h1>
     <p>Welcome to my page <%= nama %> </p>
  
+    <% if (cont.length === 0) { %>
+        <p> Array is empty</p>
+    <% } %>
+    
     <% cont.forEach(function (contact) { %>
         <li><%= contact.nama %></li> 
         <li><%= contact.email %></li> 
     <% }) %>
 
-    <% if (cont.length === 0) { %>
-        <p> Array is empty</p>
-    <% } %>
+
 </body>
 </html>
