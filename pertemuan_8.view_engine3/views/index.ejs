@@ -15,17 +15,18 @@
         <li><a href="/contact">Contact</a></li>
     </ul>
     
-    <h1>Hello World</h1>
+    <h1>Web Server Node JS</h1>
     <p>Welcome to my page <%= nama %> </p>
  
     <% if (cont.length === 0) { %>
-        <p> Array is empty</p>
+        <p> Contact data is empty</p>
+    <% } else { %>
+        <% cont.forEach(function (contact) { %>
+            <li>Name : <%= contact.nama %></li> 
+            <li>Email : <%= contact.email %></li> 
+        <% }) %>
     <% } %>
     
-    <% cont.forEach(function (contact) { %>
-        <li><%= contact.nama %></li> 
-        <li><%= contact.email %></li> 
-    <% }) %>
 
 
 </body>
