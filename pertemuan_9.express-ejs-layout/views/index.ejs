@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/header')%>
+</head>
+<body>
+    <%- include('layout/nav')%>
+    <h1><%= page %></h1>
+    <p>Welcome to my page <%= nama %> </p>
+ 
+    <% if (cont.length === 0) { %>
+        <p> Contact data is empty</p>
+    <% } else { %>
+        <% cont.forEach(function (contact) { %>
+            <li>Name : <%= contact.nama %></li> 
+            <li>Email : <%= contact.email %></li> 
+        <% }) %>
+    <% } %>
+<%- include('layout/footer')%>
