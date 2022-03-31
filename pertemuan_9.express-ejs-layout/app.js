@@ -1,6 +1,10 @@
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts')
 const app = express()
 const port = 3000
+
+// Set Templating Engines
+app.use(expressLayouts)
 
 //information using ejs
 app.set('view engine', 'ejs')
@@ -30,7 +34,10 @@ app.get('/product/:id', (req, res) => {
     req.query.category;
     res.send( "product id :" + req.params.id + '<br></br>' + "category id:" + req.query.category);  
 })  
+
+
 app.use(function(req, res, next) {
+
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
