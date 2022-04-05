@@ -44,7 +44,6 @@ app.get('/add', (req, res) => {
     res.render("add_contact", {page});  
 })
 
-
 //data contact process
 app.post('/contact', (req, res) => {
     //console.log(req.body)
@@ -54,13 +53,6 @@ app.post('/contact', (req, res) => {
     
 })
 
-const isEmpty = value => {
-    value === undefined ||
-    value === null ||
-    (typeof value === "Object" && Object.keys(value).length === 0) ||
-    (typeof value === "string" && value.trim().length === 0)
-
-}
 app.get('/detail/:name', (req, res) => {
     const page = 'Detail page'
     const cont = contacts.DataContact(req.params.name); 

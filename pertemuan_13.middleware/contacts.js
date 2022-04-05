@@ -69,25 +69,6 @@ const deleteContact =(name) =>{
     console.log('${name} deleted');
 };
 
-const datasave =(name, email, mobile) =>{
-        //validator mobile dan email
-        //if (email){
-        //     if (!validator.isEmail(email)){
-        //         console.log(`your email is wrong`);
-        //         return false;
-        //     }
-        // }
-    
-        // if (!validator.isMobilePhone(mobile, 'id-ID')){
-        //     console.log('your mobile phone is wrong')
-        //     return false;
-        // }
-    //memasukkan ke contacts.json
-    contacts.push(contact);
-    fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
-    console.log('Thank you!');
-    // rl.close();
-}
 // save data contact
 const saveContact = (name, email, mobile) =>{
     const contact = {name, email, mobile};
@@ -104,7 +85,6 @@ const saveContact = (name, email, mobile) =>{
         console.log('your mobile phone is wrong')
         return false;
     }
-
 
     const contacts = loadContact();
     //mengecek duplicate
