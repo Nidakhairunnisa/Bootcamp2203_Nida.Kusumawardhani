@@ -101,7 +101,7 @@ const saveContact = (name, email, mobile) =>{
     // rl.close();
 }
 
-module.exports = {saveContact, listContact, detailContact, deleteContact, loadContact, DataContact, datasave};
+module.exports = {saveContact, listContact, detailContact, deleteContact, loadContact, DataContact};
 
 // const deleteContact = () => {
 //     const contact = loadContact();

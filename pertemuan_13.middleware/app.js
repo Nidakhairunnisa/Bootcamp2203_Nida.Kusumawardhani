@@ -49,6 +49,7 @@ app.post('/contact', (req, res) => {
     //console.log(req.body)
     const save = contacts.saveContact(req.body.name, req.body.email, req.body.mobile);
     res.render("add_contact", {save}); 
+    res.redirect('/contact')
     //res.send("now data is added")
     
 })
