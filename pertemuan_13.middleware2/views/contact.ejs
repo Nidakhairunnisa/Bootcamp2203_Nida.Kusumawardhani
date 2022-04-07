@@ -1,0 +1,23 @@
+
+    <h1><%= page %></h1>
+
+    <a id = "add" class="btn btn-success" href="/add" role="button">Add Contact</a><
+    <table class="table">
+        <thead class>
+		<tr>
+			<th scope="col">ID</th>
+            <th scope="col">Name</th>
+			<th scope="col">Email</th>
+            <th scope="col">detail</th>
+		</tr>
+		
+        <tr>
+            <% cont.forEach(function (contact, id)  { id++ %>
+            <td><%= id %></td> 
+            <td><%= contact.name %></td> 
+			<td><%= contact.email %></td> 
+            <td><a id = "detail" class="btn btn-success" href="/detail/<%= contact.name %>" role="button">Detail</a></td>
+		</tr>
+		    <% }) %>
+    </table>
+
