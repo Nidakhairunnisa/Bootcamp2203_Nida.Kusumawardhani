@@ -1,0 +1,38 @@
+
+    <h1><%= page %></h1>
+
+    <a id = "add" class="btn btn-success" href="/add" role="button">Add Contact</a><
+    <table id ="table" class="table">
+        <thead class>
+		<tr>
+            <th></th>
+			<th scope="col">ID</th>
+            <th scope="col">Name</th>
+			<th scope="col">Email</th>
+            <th scope="col">detail</th>
+		</tr>
+		
+        <tr>
+            <% cont.forEach(function (contact, id)  { id++ %>
+            <td><input type="checkbox" class="select"></td>
+            <td><%= id %></td> 
+            <td><%= contact.name %></td> 
+			<td><%= contact.email %></td> 
+            <td><a id = "detail" class="btn btn-success" href="/detail/<%= contact.name %>" role="button">Detail</a></td>
+		</tr>
+		    <% }) %>
+    </table>
+    <button onclick="deleteRow()" type="button" class="btn btn-danger">Delete</button>
+
+    <script>  
+        function deleteRow() {
+            const table = document.getElementById("table");
+            for (const [index, row] of [...table.rows].entries()) {
+              if (row.querySelector('input:checked')) {
+                table.deleteRow(index);
+              }
+            }
+          }
+    </script>  
+
+
