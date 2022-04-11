@@ -7,6 +7,7 @@ const pool = require("./db")
 app.use(express.json()) // => res.body
 const port = 3000
 
+//menambahkan contact
 app.get("/addasync", async (req, res) =>{
     try{
         const name = "syifa"
@@ -19,6 +20,7 @@ app.get("/addasync", async (req, res) =>{
     }
 })
 
+// menampilkan list
 app.get("/list", async (req, res) =>{
     try{
         const newCont = await pool.query(`SELECT * FROM contacs`)
@@ -47,6 +49,7 @@ app.get("/delete/:name", async (req, res) =>{
         console.error(err.message)
     }
 })
+
 app.listen(port, () =>{
-    console.log('Example app listening on port $(port)')
+    console.log(`Example app listening on port ${port}`)
 })
