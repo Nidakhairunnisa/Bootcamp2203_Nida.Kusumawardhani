@@ -53,10 +53,10 @@ app.get("/delete/:name", async (req, res) =>{
 // Update contact
 app.get("/update/:name", async (req, res) =>{
     try{
-        const name = "santi"
-        const mobile = "081221129889"
+        const name = "susanti"
+        const mobile = "081231312121"
         const email = "santi@gmail.com"
-        const newCont = await pool.query(`UPDATE contacs SET name = ('${name}'), mobile = ('${mobile}'), email= ('${email}') WHERE name = ('${req.params.name}') `)
+        const newCont = await pool.query(`UPDATE contacs SET name = '${name}', mobile = '${mobile}', email= '${email}' WHERE name = ('${req.params.name}') `)
         res.redirect('/list')
     } catch (err){
         console.error(err.message)
@@ -64,5 +64,5 @@ app.get("/update/:name", async (req, res) =>{
 })
 
 app.listen(port, () =>{
-    console.log('Example app listening on port $(port)')
+    console.log(`Example app listening on port ${port}`)
 })
