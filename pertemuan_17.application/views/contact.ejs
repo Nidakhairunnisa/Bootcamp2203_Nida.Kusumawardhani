@@ -1,0 +1,29 @@
+
+    <h1><%= page %></h1>
+
+    <a id = "add" class="btn btn-success" href="/add" role="button">Add Contact</a>
+    <table class="table">
+        <thead class>
+		<tr>
+			<th scope="col">ID</th>
+            <th scope="col">Name</th>
+			<th scope="col">Email</th>
+            <th scope="col">detail</th>
+		</tr>
+		
+        <% if(data.length){
+            for(var id = 0; id < data.length; id++) { %>
+        <tr>  
+            <td><%= (id+1) %></td> 
+            <td><%= data[id].name %></td> 
+			<td><%= data[id].email %></td> 
+            <td><a id = "detail" class="btn btn-success" href="/detail/<%= data[id].name %>" role="button">Detail</a></td>
+		</tr>
+		 <% }
+            }else{ %>
+            <tr>
+                <td colspan="6">No user</td>
+            </tr>
+            <% } %>
+    </table>
+
