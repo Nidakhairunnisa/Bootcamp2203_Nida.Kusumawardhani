@@ -136,6 +136,7 @@ app.get('/detail/update/:name', (req, res) => {
 app.post('/detail/update/:name',
         body('name').custom(async(name, {req})=>{
             try{
+                //cek duplicate
                 const {rows: detcont} = await pool.query(`SELECT name FROM contacs where name= '${name}'`)
                     detcont.map(contact => {
                         if(name !== contact && req.body.oldname){
