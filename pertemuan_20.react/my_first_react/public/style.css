@@ -1,0 +1,25 @@
+li  {
+    float: left;
+    color: #080808;
+    text-align: left;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 17px;
+    list-style: none;
+    margin:auto;
+  }
+nav {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    overflow: auto;
+ }
+nav h1{
+  float: left;
+  display: inline;
+}
+ul{
+  float: right;
+}
